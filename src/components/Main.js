@@ -29,7 +29,7 @@ export default class Main extends React.Component {
         if (this.state.text.length === 0 || this.state.amount <= 0) return;
         const currState = this.state;
         currState.balance = this.state.type === 'income' ? Number(currState.balance) + Number(currState.amount) : Number(currState.balance) - Number(currState.amount);
-        currState[this.state.type].push({ remark: this.state.remark, amount: this.state.amount });
+        currState[this.state.type].push({ remark: this.state.text, amount: this.state.amount });
         this.setState(currState)
     }
 
